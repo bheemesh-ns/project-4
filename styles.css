@@ -1,0 +1,178 @@
+/* styles.css */
+:root{
+  --bg:#f3f3f4;
+  --card:#ffffff;
+  --accent:#6f7cf0;
+  --text:#333;
+  --muted:#777;
+  --top:#333333;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.4;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* top header */
+.topbar{
+  background:var(--top);
+  color:white;
+  padding:28px 20px;
+  text-align:center;
+  box-shadow:0 2px 0 rgba(0,0,0,0.15) inset;
+}
+.topbar h1{
+  font-size:28px;
+  letter-spacing:0.5px;
+  font-weight:700;
+}
+
+/* cards section */
+main{max-width:1100px;margin:40px auto;padding:0 20px}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:28px;
+  margin-bottom:36px;
+  align-items:start;
+}
+
+/* single card */
+.card{
+  background:var(--card);
+  border-radius:12px;
+  padding:28px 20px 30px;
+  text-align:center;
+  box-shadow:0 6px 14px rgba(0,0,0,0.06);
+  position:relative;
+  min-height:320px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+}
+
+.badge{
+  position:absolute;
+  top:14px;
+  right:14px;
+  background:#ff9f9f;
+  color:#7a2121;
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:600;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+
+.icon{
+  font-size:44px;
+  margin-top:6px;
+  margin-bottom:16px;
+  line-height:1;
+}
+
+.card h2{
+  font-size:20px;
+  margin-bottom:10px;
+  color:var(--text);
+  font-weight:700;
+}
+
+.desc{
+  color:var(--muted);
+  font-size:14px;
+  margin:0 6px 18px;
+  min-height:40px;
+}
+
+.price{
+  color:var(--accent);
+  font-weight:800;
+  font-size:22px;
+  margin-bottom:14px;
+}
+
+.btn{
+  margin-top:auto;
+  background:var(--accent);
+  border:none;
+  color:white;
+  padding:12px 28px;
+  border-radius:28px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 6px 12px rgba(111,124,240,0.2);
+}
+.btn:active{transform:translateY(1px)}
+
+/* comparison table */
+.comparison{
+  background:var(--card);
+  border-radius:12px;
+  padding:28px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  margin-bottom:48px;
+}
+
+.comparison h2{
+  text-align:center;
+  margin-bottom:18px;
+  font-size:22px;
+  font-weight:700;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+
+/* header row */
+thead th{
+  background:var(--accent);
+  color:white;
+  padding:14px 12px;
+  text-align:left;
+  font-weight:700;
+}
+
+/* body rows */
+tbody td{
+  padding:16px 12px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  color:var(--muted);
+}
+
+/* feature column slightly bold */
+tbody tr td:first-child{
+  color:var(--text);
+  font-weight:600;
+  width:170px;
+}
+
+/* footer */
+.footer{
+  text-align:center;
+  padding:18px 10px;
+  background:var(--top);
+  color:white;
+  font-size:14px;
+}
+
+/* responsiveness */
+@media (max-width:640px){
+  .topbar h1{font-size:20px;padding:16px}
+  .card{min-height:280px;padding:18px}
+  .badge{top:10px;right:10px;padding:5px 8px;font-size:11px}
+  .icon{font-size:38px}
+  .comparison{padding:18px}
+  thead th{font-size:13px;padding:10px}
+  tbody td{padding:12px 8px}
+}
